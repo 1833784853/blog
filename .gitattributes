@@ -1,0 +1,2 @@
+*.vue linguist-language=Vue
+*.ts linguist-language=TypeScript
