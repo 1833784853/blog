@@ -35,14 +35,14 @@ export default {
   mounted() {
     this.scrollBoxHieght = document.body.clientHeight;
     if (
-      this.boxHeight == "" ||
-      this.boxHeight == null ||
-      typeof this.boxHeight == "undefined"
+      this.boxHeight === 0 ||
+      this.boxHeight === null ||
+      typeof this.boxHeight === "undefined"
     ) {
       this.boxHeight = document.querySelector(this.boxDom).clientHeight;
     }
     if (
-      this.width == "" ||
+      this.width == 0 ||
       this.width == null ||
       typeof this.width == "undefined"
     ) {
@@ -101,6 +101,8 @@ export default {
             that.move = y2 - y1 + setTop;
             if (y2 > y1) {
               // 往下移动
+              console.log(that.scrollHeight,that.scrollBoxHieght);
+              console.log(that.scrollBoxHieght - that.scrollHeight);
               if (that.move >= that.scrollBoxHieght - that.scrollHeight) {
                 dom.style.top = that.scrollBoxHieght - that.scrollHeight + "px";
                 that.DomBoxMove(that.scrollBoxHieght - that.scrollHeight);

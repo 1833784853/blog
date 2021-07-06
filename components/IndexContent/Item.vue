@@ -11,7 +11,7 @@
     >
       <a-row>
         <a-col :xl="17">
-          <nuxt-link class="text-desc-title" :to="{name:'desc',params:{id:data.id}}">{{
+          <nuxt-link class="text-desc-title" :to="{name:'desc-id',params:{id:data.id}}">{{
             data.title
           }}</nuxt-link>
           <div class="text-desc-box">{{ data.describe }}</div>
