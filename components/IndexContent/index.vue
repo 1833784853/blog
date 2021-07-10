@@ -95,7 +95,7 @@
   @media screen and (min-width: 1400px) {
     .blog-container {
       width: 1400px;
-      margin: 20px auto 0;
+      margin: 20px auto 40px;
     }
 
     .content-right li {

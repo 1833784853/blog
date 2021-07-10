@@ -8,8 +8,8 @@
         <IndexBanner :data="[imgUrl, imgUrl2]" />
         <IndexContent />
       </a-layout-content>
-      <a-layout-footer :style="{ textAlign: 'center' }">
-        Ant Design ©2018 Created by Ant UED
+      <a-layout-footer :style="{ textAlign: 'center',background:'rgb(32,30,32)' }">
+        <IndexFooter />
       </a-layout-footer>
     </a-layout>
     <MyScroll :boxDom="'.ant-layout'" :scrollColor="'#2ea59c'" :width="10" :box-height="boxHeight" />
@@ -22,9 +22,13 @@ import IndexMenu from "~/components/IndexMenu/index.vue";
 import IndexBanner from "~/components/IndexBanner/index.vue";
 import MyScroll from "~/components/MyScroll/index.vue";
 import IndexContent from "~/components/IndexContent/index.vue";
+import IndexFooter from "~/components/IndexFooter/index.vue";
 export default Vue.extend({
   mounted() {
-    this.boxHeight = document.querySelector('.ant-layout').clientHeight
+    let dom:HTMLElement | null = document.querySelector('.ant-layout')
+    if(dom != null) {
+      this.boxHeight = dom.clientHeight
+    }
   },
   data() {
     return {
@@ -43,7 +47,8 @@ export default Vue.extend({
     IndexMenu,
     IndexBanner,
     MyScroll,
-    IndexContent
+    IndexContent,
+    IndexFooter
   },
 });
 </script>
@@ -56,6 +61,9 @@ export default Vue.extend({
 #__nuxt,
 #__layout {
   height: 100% !important;
+}
+.ant-layout-footer {
+  padding: 0 !important;
 }
 ul {
   list-style-type: none;
