@@ -22,34 +22,13 @@
           </div>
         </a-col>
       </a-row>
-      <div class="text-info">
-        <a-space :size="20">
-          <a-avatar icon="user" />
-          <span>{{ data.user.userName }}</span>
-          <span style="font-size: 12px">{{ data.content_time }}</span>
-          <span>
-            <a-icon :theme="icTheme" class="ic" type="like" />
-            <span style="color: #0099ff">{{ data.good }}</span>
-          </span>
-          <span>
-            <a-icon :theme="icTheme" class="ic" type="dislike" />
-            <span style="color: #0099ff">{{ data.bad }}</span>
-          </span>
-          <span>
-            <a-icon class="ic" type="eye" />
-            <span style="color: #0099ff">{{ data.see }}</span>
-          </span>
-          <span>
-            <a-icon class="ic" type="message" />
-            <span style="color: #0099ff">{{ data.comment }}</span>
-          </span>
-        </a-space>
-      </div>
+      <UserInfo :data="data"/>
     </a-skeleton>
   </div>
 </template>
 
 <script>
+  import UserInfo from "~/components/IndexContent/UserInfo";
 export default {
   props: {
     data: Object,
@@ -60,9 +39,11 @@ export default {
   data() {
     return {
       loading: true,
-      icTheme: 'outlined'
     };
   },
+  components: {
+    UserInfo
+  }
 };
 </script>
 
@@ -108,12 +89,6 @@ export default {
     width: 100%;
     height: 100%;
   }
-  .text-info .ic {
-    transition: all 0.5s;
-  }
-  .text-info .ic:hover {
-    color: #0099ff;
-    cursor: pointer;
-  }
+
 }
 </style>

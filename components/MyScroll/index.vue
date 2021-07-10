@@ -101,8 +101,6 @@ export default {
             that.move = y2 - y1 + setTop;
             if (y2 > y1) {
               // 往下移动
-              console.log(that.scrollHeight,that.scrollBoxHieght);
-              console.log(that.scrollBoxHieght - that.scrollHeight);
               if (that.move >= that.scrollBoxHieght - that.scrollHeight) {
                 dom.style.top = that.scrollBoxHieght - that.scrollHeight + "px";
                 that.DomBoxMove(that.scrollBoxHieght - that.scrollHeight);
@@ -133,7 +131,6 @@ export default {
     scrollLeave(e) {
       let that = this;
       that.$store.commit("setScrollMoveSpace", that.move);
-      console.log(that.scrollColor);
       document.querySelector(".scrollItem").style.cursor = "pointer";
       document.querySelector(".scrollItem").style.opacity = 0.3;
 
@@ -150,11 +147,10 @@ export default {
     },
     wheel() {
       let that = this;
-
+      document.body.onmousewheel = function (e) {
       that.scrollBoxHieght = document.body.clientHeight;
       that.scrollHeight =
         (that.scrollBoxHieght * that.scrollBoxHieght) / that.boxHeight;
-      document.body.onmousewheel = function (e) {
         if (e.wheelDelta > 0) {
           that.up(e);
         } else if (e.wheelDelta < 0) {

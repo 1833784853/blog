@@ -3,7 +3,7 @@
     <div class="item-left">
       <nuxt-link :to="{name:'sort-tag',params:{tag:data.tagName}}"><span>{{data.tagName}}</span></nuxt-link>
     </div>
-    <div class="item-right">
+    <div class="item-right" v-if="data.countNum != undefined">
       <span>{{data.countNum}}</span>
     </div>
   </div>

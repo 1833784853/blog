@@ -57,7 +57,7 @@
           @search="onSearch"
         />
         <nuxt-link to="/login" style="margin-right: 20px"
-          ><span class="login-box">登录</span></nuxt-link
+          ><span class="login-box"><a-icon type="login" style="margin-right: 10px;font-size: 14px"/>登录</span></nuxt-link
         >
         <a-switch default-checked>
           <a-icon slot="checkedChildren" type="alert" />
@@ -116,8 +116,7 @@ export default Vue.extend({
     line-height: 64px;
   }
   .menu-header-content {
-    width: 1400px;
-    margin: 0 auto;
+    padding: 0 64px;
   }
   .logo {
     font-family: Axure Handwriting;
@@ -144,7 +143,7 @@ export default Vue.extend({
     color: #2ea59c !important;
   }
   .item-content {
-    font-size: 14px;
+    font-size: 16px;
     color: #fff !important;
   }
   .ant-menu-item-selected .item-content {
